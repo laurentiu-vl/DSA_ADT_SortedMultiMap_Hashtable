@@ -10,7 +10,9 @@ private:
     const SortedMultiMap& map;
     SMMIterator(const SortedMultiMap& map);
 
-    //TODO - Representation
+    int size;
+    int index;
+    //array
 
 public:
     void first();

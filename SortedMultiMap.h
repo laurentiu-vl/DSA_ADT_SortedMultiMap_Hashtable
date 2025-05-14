@@ -17,7 +17,24 @@ typedef bool(*Relation)(TKey, TKey);
 class SortedMultiMap {
     friend class SMMIterator;
 private:
-    //TODO - Representation
+
+    struct HashNode {
+        TKey key;
+        TValue* value;
+        int sizeOfHashNode;
+        //resize();
+    };
+
+    HashNode* hashTable;
+    int hashTableSize;
+    int hashTableCapacity;
+
+    void resize();
+
+    int hashFunctionOne(TKey key);
+    int hashFunctionTwo(TKey key);
+
+    //void extractSortedElements(Entry* sortedElements, int& count);
 
 public:
 
